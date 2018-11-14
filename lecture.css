@@ -1,0 +1,31 @@
+/* box-model */
+	.boxmodel {
+		display: inline-block;
+	}
+
+	.b1 {
+		background-color: green
+	}
+
+	.b2 {
+		border: 1em solid black;
+		background-color: yellow;
+		padding: 2em;
+		margin: 3em;
+	}
+
+	.b3 {
+		background-color: red;
+		width: 1em;
+		height: 1em;
+	}
+/* /box-model */
+
+/* selectors */
+div.lecture em ~ strong { 
+	background: green; 
+}
+
+#exampleVerticalAlignment {
+	height: 5em;
+}

@@ -1,0 +1,127 @@
+body {
+	background-color: #eee;
+	color: black;
+	padding-top: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: black;
+}
+
+a h1 {
+	border-top-style: solid;
+	border-color: grey;
+	margin: 2ex 0 1ex;
+	padding-top: 55px;
+}
+
+a[id] {
+	text-decoration: none;
+}
+
+table#colored_table tr td {
+	padding: 1em;
+	font-weight: bold;
+}
+
+dd {
+	padding-left: 1em;
+}
+
+header, footer {
+	background: green;
+}
+footer {
+	margin-top: 1em;
+}
+
+/* forms */
+	form {
+		display: inline-table;
+		text-align: right;
+		width: 100px;
+	}
+
+	fieldset {
+		display: table-row-group;
+		padding-bottom: 1em;
+		border: 1px solid black;
+	}
+
+	legend {
+		text-align: left;
+		width: auto;
+		margin: 0.8em 0 1ex 10px;
+		padding: 0 5px 2px;	
+		border: 1px solid black;
+	}
+
+	fieldset:not(:last-of-type) div {
+		display: table-row;
+		text-align: left;
+		margin-bottom: 1em;
+		padding-bottom: 1em;
+	}
+
+	fieldset:not(:last-of-type) div div {
+		display: table-cell;
+		word-wrap: normal;
+	}
+
+	label {
+		white-space: nowrap;
+	}
+
+	fieldset div:not(:last-of-type) input,
+	fieldset div:not(:last-of-type) select,
+	fieldset div:not(:last-of-type) textarea
+	{
+		display: table-cell;
+		margin-bottom: 0.7em;
+	}
+
+	input[type="radio"],
+	input[type="checkbox"] {
+		margin: 0 1ex 0 0;
+		padding: 0
+	}
+
+
+	fieldset div label {
+		display: table-cell;
+		text-align: right;
+		vertical-align: top;
+		padding: 3px 1ex 0 10px;
+	}
+
+	fieldset:last-of-type {
+		border: none;
+	}
+/* /forms */
+
+/* .classes */
+.css {
+	color: darkgreen;
+}
+
+.filename {
+	color: grey;
+}
+
+a .filename {
+	text-decoration: underline;
+}
+
+.html {
+	color: firebrick;
+}
+
+.js {
+	color: mediumblue; 
+}
+
+.shell {
+	background: black;
+	color: lightgrey;
+}
+/* /.classes */

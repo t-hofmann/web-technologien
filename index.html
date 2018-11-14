@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- bootstrap -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--
+			The above 3 meta tags *must* come first in the head;
+			any other head content must come *after* these tags
+		-->
+
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Bootstrap theme -->
+		<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<link href="bootstrap/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<!-- requirement for bootstrap -->
+		<script src="js/jquery-3.1.1.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!-- /bootstrap -->
+
+	<!-- customization -->
+		<title>Digitale Medien</title>
+		<meta name="author" content="Thomas Hofmann<thomas.hofmann@hs-anhalt.de>">
+		<meta name="description" content="&Uuml;bersich zu HTML und CSS; bootstrap bestimmt im Wesentlichen das Layout">
+		<meta name="keywords" content="html, css, intro, &Uuml;bersicht, Einf&uuml;hrung, bootstrap">
+
+		<link rel="icon" href="favicon.ico">
+
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="lecture.css">
+		<!-- js -->
+
+		<link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+		<script src="jquery-ui/jquery-ui.js"></script>
+
+		<script src="js/jquery.kontrol.js"></script>
+
+		<script src="progressBar.js"></script>
+
+		<script>
+			'use strict';
+
+			const START_PAGE = "comp.home.html";
+			const PARAM_CONTENT = "content";
+
+			var url = new URL(window.location);
+			var newContent = url.searchParams.get(PARAM_CONTENT);
+			var content = START_PAGE;
+
+			if (newContent
+				&& newContent != content
+			) {
+				content = newContent;
+			}
+
+			function loadContent(filename) {
+				loadComponent(filename, "content");
+			}
+
+			function loadComponent(filename, id) {
+				$("#" + id).load(filename); // that is a call to ajax.load()
+			}
+
+			function redirectToContent(content) {
+				var url = new URL(window.location);
+				url.searchParams.set(PARAM_CONTENT, content);
+				window.location = url;
+			}
+
+		</script>
+	<!-- /customization -->
+</head>
+<body>
+	<nav id="nav" class="navbar navbar-inverse navbar-fixed-top">
+			<script>
+				loadComponent("comp.nav.html", "nav");
+			</script>
+    </nav>
+
+			<header>
+				<div class="container">
+					Header
+				</div>
+			</header>
+
+	<div class="container">
+      	<div id="content" class="starter-template">
+
+			<script>
+				loadContent(content);
+			</script>
+
+      	</div> <!-- /.starter-template -->
+	</div> <!-- /.container -->
+
+	<footer>
+		<div class="container">
+			Footer
+		</div>
+	</footer>
+
+</body>
+</html>

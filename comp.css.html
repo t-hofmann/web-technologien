@@ -1,0 +1,402 @@
+			<a id="css">
+				<h1>CSS</h1>
+			</a>
+			<p>
+				Mit <abbr title="Cascading Style Sheet">CSS</abbr> ist es möglich, die beabsichtigte
+				Darstellungsweise von HTML-Seiten zu beschreiben.
+			</p>
+
+			<a id="boxmodel">
+				<h2>Box-Modell</h2>
+			</a>
+
+			<p>
+				Jedes Element einer HTML-Seite ist eine solche Box. Wobei es zwei
+				Untertypen gibt, n&auml;mlich "<em>inline</em>"- und "<em>block</em>"-Elemente.
+				Inline-Elemente stehen innerhalb des Flie&szlig;textes, w&auml;hrend
+				Block-Elemente typischerweise durch Zeilenumbr&uuml;che eingegrenzt sind.
+			</p>
+			<p>
+				Das Box-Modell wird durch folgende drei Kompontenten definiert.
+			</p>
+			<dl>
+				<dt>margin</dt>
+				<dd>Außenabstand (grün)</dd>
+				<dt>border</dt>
+				<dd>Umrandung (schwarz)</dd>
+				<dt>padding</dt>
+				<dd>Innenabstand (gelb)</dd>
+			</dl>
+			<p>Zusätzlich kommt hier ein <code class="html">div</code>-Element in "rot" als Inhalt der Box zum Einsatz.</p>
+
+			<div class="boxmodel b1">
+				<div class="boxmodel b2">
+					<div class="boxmodel b3"></div>
+				</div>
+			</div>
+
+
+			<a id="selectors">
+				<h2>Selektoren</h2>
+			</a>
+
+			<p>
+				Mit Hilfe sogenannter Selektoren (engl. <em>selector</em>) werden diejenigen
+				Elemente bestimmt, denen Eigenschaften zugewiesen werden sollen. Es gibt verschiedene
+				Arten von Selektoren:
+			</p>
+
+<pre><code class="css">SELEKTOR {
+	Eigenschaft_A: WERT;
+	Eigenschaft_B: WERT;
+}</code></pre>
+
+			<table class="table table-striped table-bordered">
+				<tr>
+					<th>Selektor</th>
+					<th>Beschreibung</th>
+				</tr>
+				<tr>
+					<td><code class="css">*</code></td>
+					<td>jeder Tag</td>
+				</tr>
+				<tr>
+					<td><code class="css">TAG</code></td>
+					<td>Tags des jeweiligen Typs</td>
+				</tr>
+				<tr>
+					<td><code class="css">.CLASS_A</code></td>
+					<td>Tags, die der CSS-Klasse "CLASS_A" angeh&ouml;ren,
+						<br>
+						bspw. <code class="html">class="CLASS_A"</code> oder <code class="html">class="CLASS_A CLASS_B"</code>
+					</td>
+				</tr>
+				<tr>
+					<td><code class="css">#ID</code></td>
+					<td>Das Element mit dieser ID</td>
+				</tr>
+				<tr>
+					<td><code class="css">[ATTRIBUTE_A]</code></td>
+					<td>Tags mit dem Attribut</td>
+				</tr>
+				<tr>
+					<td><code class="css">[ATTRIBUTE_A=VALUE]</code></td>
+					<td>Attribut hat Wert</td>
+				</tr>
+				<tr>
+					<td><code class="css">[ATTRIBUTE_A~=VALUE]</code></td>
+					<td>Attribut enth&auml;lt Wert</td>
+				</tr>
+				<tr>
+					<td><code class="css">[ATTRIBUTE_A^=VALUE]</code></td>
+					<td>Attribut beginnt mit Wert</td>
+				</tr>
+				<tr>
+					<td><code class="css">[ATTRIBUTE_A$=VALUE]</code></td>
+					<td>Attribut endet mit Wert</td>
+				</tr>
+				<tr>
+					<td><code class="css">[ATTRIBUTE_A*=VALUE]</code></td>
+					<td>Attribut enth&auml;lt Wert</td>
+				</tr>
+				<tr>
+					<td><code class="css">A B</code></td>
+					<td>Tags B innhalb Tags A</td>
+				</tr>
+				<tr>
+					<td><code class="css">A &lt; B</code></td>
+					<td>Tags B die Kind von Tags A sind</td>
+				</tr>
+				<tr>
+					<td><code class="css">A ~ B</code></td>
+					<td>Tags B, die geschwisterliche Nachfolger von Tag A sind
+						<div class="lecture">
+							<strong>B</strong>
+							<em> A </em>
+							<strong> B </strong>
+							<strong> B </strong>
+						</div>
+
+					</td>
+				</tr>
+				<tr>
+					<td><code class="css">A + B</code></td>
+					<td>Tags B, die direkter geschwisterlicher Nachbar von A sind</td>
+				</tr>
+				<tr>
+					<td><code class="css"></code></td>
+					<td></td>
+				</tr>
+			</table>
+
+			<a id="units">
+				<h2>Einheiten</h2>
+			</a>
+
+			<h3>L&auml;ngen</h3>
+			<p>
+				Um L&auml;ngen festlegen zu k&ouml;nnen, sind in CSS verschiedene Einheiten definiert.
+				Für die Bildschirmausgabe sind relative Einheiten empfehlenswert, - Gr&uuml;nde daf&uuml;r
+				sind die dynamische Anpassung an sich &auml;ndernde Gr&ouml;&szlig;en von Schrift oder Fenster.
+				Im Falle von bspw. Abst&auml;nden im Zusammenhang mit Text eignet sich <code class="css">em</code>
+				besonders gut (vgl. anschlie&szlig;ende Tabellen), - bei <code class="css">ex</code> ist zu
+				beachten, dass sich die H&ouml;he von Kleinbuchstaben je nach Schriftart deutlich unterscheiden kann.
+			</p>
+			<dl>
+				<dt><h4>Relative L&auml;ngenma&szlig;e</h4></dt>
+				<dd>
+					<h5>Schriftart-abh&auml;ngig</h5>
+					<table class="table table-striped table-bordered">
+						<tr>
+							<th>CSS</th>
+							<th>Beschreibung</th>
+						</tr>
+						<tr>
+							<td><code class="css">em</code></td>
+							<td>H&ouml;he eines Gro&szlig;buchstaben in der an der
+								aktuellen Stelle g&uuml;ltigen Schriftgr&ouml;&szlig;e
+								und Schriftart
+							</td>
+						</tr>
+						<tr>
+							<td><code class="css">ex</code></td>
+							<td>H&ouml;he eines "x" in der jeweils aktuellen Schriftgr&ouml;&szlig;e und Schriftart</td>
+						</tr>
+						<tr>
+							<td><code class="css">ch</code></td>
+							<td>Breite der Ziffer "0" in der jeweils aktuellen Schriftgr&ouml;&szlig;e und Schriftart</td>
+						</tr>
+						<tr>
+							<td><code class="css">rem</code></td>
+							<td>
+								Schriftgr&ouml;&szlig;e der Schriftart des Wurzelelements
+								des Dokumentes (bei HTML das <code class="html">html</code>-Element
+							</td>
+						</tr>
+					</table>
+
+
+					<h5>Viewport-abh&auml;ngig</h5>
+					<table class="table table-striped table-bordered">
+						<tr>
+							<th>CSS</th>
+							<th>Beschreibung</th>
+						</tr>
+						<tr>
+							<td><code class="css">vw</code></td>
+							<td>100vw = Breite des Viewports</td>
+						</tr>
+						<tr>
+							<td><code class="css">vh</code></td>
+							<td>100vh = H&ouml;he des Viewports</td>
+						</tr>
+						<tr>
+							<td><code class="css">vmin</code></td>
+							<td>100vmin = Minimum aus Breite und H&ouml;he des Viewports</td>
+						</tr>
+						<tr>
+							<td><code class="css">vmax</code></td>
+							<td>100vmax = Maximum aus Breite und H&ouml;he des Viewports</td>
+						</tr>
+					</table>
+				</dd>
+
+				<dt><h4>Absolute L&auml;ngenma&szlig;e</h4></dt>
+				<dd>
+					<table class="table table-striped table-bordered">
+						<tr>
+							<th>CSS</th>
+							<th>Einheit</th>
+							<th>Beschreibung</th>
+						</tr>
+						<tr>
+							<td><code class="css">cm</code></td>
+							<td>Zentimeter</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><code class="css">mm</code></td>
+							<td>Millimeter</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><code class="css">in</code></td>
+							<td>Zoll</td>
+							<td>2.54cm</td>
+						</tr>
+						<tr>
+							<td><code class="css">pt</code></td>
+							<td>Punkt</td>
+							<td>1pt = (1/72)in</td>
+						</tr>
+						<tr>
+							<td><code class="css">pc</code></td>
+							<td>Pica</td>
+							<td>1pc = 12pt</td>
+						</tr>
+						<tr>
+							<td><code class="css">px</code></td>
+							<td></td>
+							<td>1px ist idealerweise die Dicke, der kleinsten darstellbaren Linie auf dem jeweiligen Ausgabegerät, Haarnadellinie </td>
+						</tr>
+					</table>
+				</dd>
+
+			</dl>
+
+			<h3>Farben</h3>
+			<p>
+				Farben werden typischerweise mit Hilfe von RGB-Farbcodes definiert.
+				Die einzelnen Farbkan&auml;le k&ouml;nnen dabei Werte von 0 bis 255 annehmen.
+			</p>
+			<dl>
+				<dt>rgb</dt>
+				<dd>
+					rgb([0..255], [0..255], [0..255]); bspw. <code class="css">rgb(100, 90, 220)</code>
+				</dd>
+
+				<dt>rgba</dt>
+				<dd>
+					Mit Hilfe von rgba kann zusätzlich zur Farbe ein Wert f&uuml; den zus&auml;tzlichen <em>Alphakanal</em>
+					festgelegt werden, damit ist es m&ouml;glich eine Farben durchscheinend zu machen. Die Werte des Alphakanals
+					werden mit einer Dezimalzahl von 0 (vollkommen transparent) bis 1.0 (nicht transparent, opaque).
+				</dd>
+
+				<dt>#</dt>
+				<dd>Die Raute <code class="css">#</code> ermöglicht es den RGB-Farbcode hexadezimal anzugeben, dabei sind zwei Schreibweisen m&ouml;glich:
+					<code class="css">#fff</code> ist bspw. &auml;quivalent zu <code class="css">#ffffff;</code>
+				</dd>
+
+				<dt>named</dt>
+				<dd>Viele Farben sind &uuml;ber ihre Namen ansprechbar, etwa:
+					<style type="text/css">
+						table.color tr td {
+							padding: 1ex;
+						}
+					</style>
+
+					<div class="well">
+						<table class="color">
+							<tr>
+								<td style="background: white">white</td>
+								<td style="background: lightgrey">lightgrey</td>
+								<td style="background: grey">grey</td>
+								<td style="background: black; color: lightgrey">black</td>
+							</tr>
+							<tr>
+								<td style="background: red">red</td>
+								<td style="background: darkred">darkred</td>
+							</tr>
+							<tr>
+								<td style="background: orange">orange</td>
+								<td style="background: darkorange">darkorange</td>
+							</tr>
+							<tr>
+								<td style="background: yellow">yellow</td>
+								<td style="background: lightyellow">lightyellow</td>
+							</tr>
+							<tr>
+								<td style="background: green">green</td>
+								<td style="background: lightgreen">lightgreen</td>
+								<td style="background: darkgreen">darkgreen</td>
+								<td style="background: lime">lime</td>
+							</tr>
+							<tr>
+								<td style="background: blue">blue</td>
+								<td style="background: lightblue">lightblue</td>
+								<td style="background: darkblue">darkblue</td>
+							</tr>
+							<tr>
+								<td style="background: purple">purple</td>
+							</tr>
+						</table>
+					</div>
+				</dd>
+				<dt>Beispiele</dt>
+				<dd>
+					Wei&szlig: <code class="css">#fff</code>, <code class="css">#ffffff</code>, <code class="css">rgb(255,255,255)</code>, <code class="css">rgba(255,255,255,0)</code>, <code class="css">white</code>>
+					<br>
+					Schwarz: <code class="css">#000</code>, <code class="css">#000000</code>, <code class="css">rgb(0,0,0)</code>, <code class="css">rgba(0,0,0,0)</code>, <code class="css">black</code>
+				</dd>
+
+			</dl> <!-- /Farben -->
+
+			<a id="textlayout">
+				<h2>Textsatz</h2>
+			</a>
+
+			<h3>Linksb&uuml;ndig</h3>
+			<p><code class="css">text-align: left;</code> ist die Voreinstellung und damit optional.</p>
+
+			<div class="well">
+				<p>
+					Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder w&uuml;nscht,
+					nur, weil er Schmerz ist,
+					es sei denn, es kommt zu zuf&auml;lligen Umst&auml;nden, in denen M&uuml;hen und
+					Schmerz ihm gro&szlig;e
+					Freude bereiten k&ouml;nnen.
+				</p>
+			</div>
+
+			<div class="well">
+				<p style="text-align: left">
+					Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je anstrengender
+					k&ouml;rperlicher
+					Bet&auml;tigung, au&szlig;er um Vorteile daraus zu ziehen?
+				</p>
+			</div>
+
+			<h3>Rechtsb&uuml;ndig</h3>
+			<p><code class="css">text-align: right;</code></p>
+			<div class="well">
+				<p style="text-align: right">
+					Aber wer hat irgend ein Recht, einen Menschen zu tadeln, der die Entscheidung trifft,
+					eine Freude zu
+					genie&szlig;en, die keine unangenehmen Folgen hat, oder einen, der Schmerz vermeidet,
+					welcher keine
+					daraus resultierende Freude nach sich zieht?
+				</p>
+			</div>
+
+			<h3>Zentriert</h3>
+			<p><code class="css">text-align: center;</code></p>
+			<div class="well">
+				<p style="text-align: center">
+					Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder w&uuml;nscht,
+					nur, weil er Schmerz
+					ist, es sei denn, es kommt zu zuf&auml;lligen Umst&auml;nden, in denen M&uuml;hen
+					und Schmerz ihm
+					gro&szlig;e Freude bereiten k&ouml;nnen.
+				</p>
+			</div>
+
+			<h3>Blocksatz</h3>
+			<p><code class="css">text-align: justify;</code></p>
+			<div class="well">
+				<p style="text-align: justify">
+					Um ein triviales Beispiel zu nehmen, wer von uns unterzieht sich je anstrengender
+					k&ouml;rper&shy;licher
+					Bet&auml;tigung, au&szlig;er um Vorteile daraus zu ziehen? Aber wer hat irgend
+					ein Recht, einen
+					Menschen zu tadeln, der die Ent&shy;scheidung trifft, eine Freude zu genie&szlig;en,
+					die keine unangenehmen
+					Folgen hat, oder einen, der Schmerz vermeidet, welcher keine daraus resul&shy;tierende
+					Freude nach sich zieht?
+					Auch gibt es niemanden, der den Schmerz an sich liebt, sucht oder w&uuml;nscht,
+					nur.
+				</p>
+			</div>
+
+			<h3>Vertikale Ausrichtung</h3>
+			<p>
+				Mit der Eigenschaft <code class="css">vertical-align</code> wird die vertikale Ausrichtung festgelegt,
+				möglich sind die Werte <code class="css">top</code>, <code class="css">middle</code> und <code class="css">bottom</code>.
+				Hier gezeigt am Beispiel einer Tabelle:
+			</p>
+			<table id="exampleVerticalAlignment" class="table table-bordered">
+				<tr>
+					<td style="vertical-align: top;"><code class="css">vertical-align: top;</code></td>
+					<td style="vertical-align: middle;"><code class="css">vertical-align: middle;</code></td>
+					<td style="vertical-align: bottom;"><code class="css">vertical-align: bottom;</code></td>
+				</tr>
+			</table>

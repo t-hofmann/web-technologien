@@ -1,0 +1,106 @@
+<h1>Form-Controls mit Javascript</h1>
+		<h2>jquery-ui</h2>
+			<div class="well">
+				<form class="mixer">
+					<div id="v-slider"></div>
+					
+					<script>
+					$( "#v-slider" ).slider({
+						orientation: "vertical",
+						range: "min",
+						min: 0,
+						max: 100,
+					});
+					</script>
+				</form>
+			</div>
+				
+		<h2>jquery.kontrol</h2>
+			<div class="well">
+				<form style="vertical-align: top;">
+					<nobr>
+					<input type="text" class="volume" value="75"></input>
+ 
+         			<input type="text" class="pan" 
+					 	data-width="180" data-height="180" 
+						data-min="-100" data-max="100" 
+					 	data-angleOffset="-125" 
+					 	data-angleArc="250" 
+						value="0"
+					></input>
+					</nobr>
+
+					<script>
+						$(".volume").knob({
+							fgColor: "#000",
+							bgColor: "grey",
+							'change' : function (v) { console.log(v); }
+						});
+					</script>
+
+					<script>
+						$(".pan").knob({
+							fgColor: "#000",
+							bgColor: "grey",
+							cursor: true,
+							'change' : function (v) { console.log(v); }
+						});
+					</script>
+				</form>
+
+				<form action="">
+					<fieldset class="pad" data-width="180" data-height="180">
+						<legend>XY Pad</legend>
+						x : <input name="x" value="27"></input>
+						y : <input name="y" value="80"></input>
+					</fieldset>
+					<script>
+						var $pad = $(".pad")
+						.xy({
+							displayPrevious:false
+							, min : -100
+							, max : 100
+							, fgColor:"#222222"
+							, bgColor:"#EEEEEE"
+							/*, change : function (value) {
+							console.log("change : ", value);
+							}*/
+						})
+                    	.css({'border':'5px solid #BBB'});
+					</script>
+				</form>
+
+				<form>
+					<fieldset class="bars1" data-width="720" data-cols="16" data-min="-100" data-max="100">
+            			<legend>16 tracks</legend>
+						<input value="90"></input>
+						<input value="40"></input>
+						<input value="-10"></input>
+						<input value="-10"></input>
+						<input value="-20"></input>
+						<input value="-20"></input>
+						<input value="-20"></input>
+						<input value="-100"></input>
+						<input value="-100"></input>
+						<input value="-20"></input>
+						<input value="-20"></input>
+						<input value="-20"></input>
+						<input value="-10"></input>
+						<input value="-10"></input>
+						<input value="40"></input>
+						<input value="90"></input>
+        			</fieldset>
+
+					<script>
+						$(".bars1").bars({
+               				fgColor:"black",
+                			/*, change : function (value) {
+                 			console.log("change : ", value);
+                 			}*/
+                			/*, draw : function () {
+                 				console.log(this.o);
+                 			}*/
+            			});
+					</script>
+				</form>
+			</div>

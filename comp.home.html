@@ -1,0 +1,54 @@
+<h1>Digitale Medien</h1>
+<p>
+	Diese Website dient als Begleitmaterial zur Vorlesung "Digitale Medien".
+	Die dargestellten Themen sind Web-Technologien, im Speziellen HTML, CSS und Javascript.
+	Die Darstellung folgt dem Inhalt, womit die Website selbst auch als Anwendungsbeispiel
+	der Technologien dient.
+</p>
+
+
+<h2>Layout-Konventionen</h2>
+			<p>In diesem Dokument verwendete Darstellungsweisen:</p>
+			<dl>
+				<dt>Dateinamen</dt>
+				<dd><code class="filename">index.html</code></dd>
+
+				<dt>Shell</dt>
+				<dd><code class="shell">shell-code</code></dd>
+
+				<dt>HTML</dt>
+				<dd><code class="html">&lt;TAG&gt;</code></dd>
+
+				<dt>CSS</dt>
+				<dd><code class="css">text-align: center;</code></dd>
+
+				<dt>Javascript</dt>
+				<dd><code class="js">function loadContent(filename){...}</code></dd>
+			</dl>
+
+<h2>Entstehung</h2>
+<p>
+	Ausgehend von einem bootstrap-Layout wurden zunächst die Inhalte (html, css) auf einer einzelnen HTML-Seite
+	dargestellt. Im Zuge der weiteren Ausarbeitung erschien es zweckm&auml;&szlig;ig, die Inhalte auf mehrere
+	Unterseiten zu verteilen. Daraus folgte die Notwendigkeit das Navigationsmen&uuml; entweder mehrfach
+	bereitzustellen, - redundant auf jeder Unterseite, - oder aber mit Hilfe von Skripting die Inhalte zu
+	kombinieren. In Frage k&auml;men hierzu sowohl server- als auch clientseitiges Skripting.
+	Um die Website weiterhin per Download ohne erheblichen Installationsaufwand (etwa f&uuml;r einen Webserver)
+	auf der Clientseite bereitstellen zu k&ouml;nnen, wurde clientseitigem Skripting der Vorzug gegeben.
+</p>
+<p>
+	Den Einstiegspunkt bietet die Datei <code class="filename">index.html</code>.
+	Dort wird beim Start der Inhalt aus <a href="comp.home.html"><code class="filename">comp.home.html</code></a>
+	geladen. Bei Click (<code class="js">onclick</code>) auf die oberen Men&uuml;punkte wird die jeweilige Unterseite
+	geladen und als Inhalt des <code class="html">&lt;div class="content"&gt;</code>-Tags gesetzt.
+</p>
+<p>
+	Das verwendete bootstrap-Layout wurde mittels eigener Stylesheets
+	(<a href="style.css"><code class="filename">style.css</code></a>,
+	<a href="lecture.css"><code class="filename">lecture.css</code></a>
+	)
+	stellenweise angepasst.
+</p>
+<p>
+	Die Website wurde zuletzt getestet mit dem Browser "Mozilla Firefox - Developer Edition (version 64.0b8, 64-bit)" unter Linux.
+</p>

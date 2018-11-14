@@ -1,0 +1,182 @@
+<h1>Javascript</h1>
+
+	<h2>Datentypen/Datenstrukturen</h2>
+	<dl>
+		<dt>boolean</dt>
+		<dd>
+			<code class="js">var isGiven = true;</code>
+			<br>
+			<code class="js">var isGiven = false;</code>
+		</dd>
+
+		<dt>Zeichenketten</dt>
+		<dd><code class="js">var zeichenkette = "ein String";</code></dd>
+
+		<dt>Zahlen</dt>
+		<dd>
+			<dl>
+				<dt>Ganze Zahlen</dt>
+				<dd><code class="js">var number = 42;</code></dd>
+
+				<dt>Dezimalzahlen</dt>
+				<dd><code class="js">var euler = 2.718281828459054</code></dd>
+
+				<dt>Hexadezimalzahlen</dt>
+				<dd>0x2A</dd>
+
+				<dt>Oktalzahlen</dt>
+				<dd>052</dd>
+			</dl>
+		</dd>
+
+		<dt>Array</dt>
+		<dd>
+<pre class="js">var myArray = [2, "a", "hallo welt"];
+	var elem1 = myArray[0];
+	// ...
+	var elem3 = myArray[2];
+</pre>
+		</dd>
+
+		<dt>Assoziatives Array</dt>
+		<dd></dd>
+
+		<dt>Objekt</dt>
+		<dd></dd>
+	</dl>
+
+	<h2>Operatoren</h2>
+
+	<h2>Syntax</h2>
+		<h3>Kommentare</h3>
+		<p>Es ist möglich mehrzeilige oder einzeilige Kommentare zu schreiben</p>
+<pre class="js">/*
+	ein mehrzeiliger Kommentar
+*/
+
+// oder auch ein Kommentar ab einem doppelten "Slash" bis zum Zeilenende</pre>
+
+		<h3>Variablen</h3>
+		<p>
+			Variablen sollten mit <code class="js">var</code> deklariert werden, da die
+			Sichtbarkeit (engl. <em>scope</em>) sonst global ist, und daneben nicht leicht erkennbar ist,
+			an welcher Stelle die Variable eingeführt wurde. Variablen können bei Deklaration direkt initialisiert werden.
+		</p>
+<pre class="js">'use strict'; // erzwingt die explizite Deklaration einer neuen Variablen mittels "var"
+
+var variablenNameA;
+var variablenNameB = Ausdruck; // mit Initialisierung</pre>
+
+		<h3>Funktionen</h3>
+		<p>
+			Funktionen können inkl. Parametern definiert werden. Eine Funktion muss nichts zurückgeben.
+		</p>
+			<pre class="js">function NAME (PARAMETER){
+	return VALUE;
+}</pre>
+
+		<h3>Kontrollstrukturen</h3>
+		<p>
+			<code class="js">NULL</code> evaluiert zu <code class="js">false</code>
+			Der Vergleich von Objekten prüft auf Identität.
+		</p>
+		<p>Boolsche Operatoren: </p>
+		<dl>
+			<dt>UND</dt>
+			<dd><code class="js">&amp;&amp;</code></dd>
+			<dt>ODER</dt>
+			<dd><code class="js">||</code></dd>
+			<dt>Negation</dt>
+			<dd><code class="js">!</code></dd>
+		</dl>
+<pre class="js">
+if (BEDINGUNG) AUSDRUCK;
+</pre>
+<pre class="js">
+if (BEDINGUNG) {
+	// ANWEISUNGEN
+}
+</pre>
+
+<pre class="js">
+if (BEDINGUNG) {
+	// ANWEISUNGEN
+} else if (BEDINGUNG_B) {
+
+} else {
+
+}
+</pre>
+
+<pre class="js">
+while (BEDINGUNG) { // kopfgesteuert
+	// ANWEISUNGEN
+}</pre>
+
+<pre class="js">
+do {
+	// ANWEISUNGEN
+} while (BEDINGUNG); // fußgesteuert</pre>
+
+<pre class="js">
+for (INITIALISIRUNG; BEDINGUNG; AUSDRUCK) {
+	// ANWEISUNGEN
+}</pre>
+
+<pre class="js">
+for (var KEY in HASH) { // iteriert auch über Eigenschaften eines Objekts
+	KEY;
+	var value = HASH[KEY];
+}
+</pre>
+
+<h3>Event-Handling</h3>
+	<p>Events haben einen Ursprung und einen Typ.</p>
+	<p>Ein Event-Handler bearbeitet ein Event.</p>
+	<p>Ein Event-Listener stellt die Verbindung zwischen Event und Event-Handler her.</p>
+
+	<style>
+		div.event_demo {
+			width: 120px;
+			height: 120px;
+			float: left;
+			/* vertical-align: top; */
+			text-align: left;
+			padding: 1ex;
+
+			border: grey 2pt solid;
+			margin: 1em;
+		}
+
+		div.event_demo:hover {
+			background-color: lightgrey;
+		}
+
+	</style>
+	<div id="onmouseover" class = "event_demo"
+		onmouseover="document.getElementById('onmouseover').textContent = 'onmouseover';"
+		onmouseout="document.getElementById('onmouseover').textContent = 'onmouseout';"
+	>
+		onmouse <br>[over, out]
+	</div>
+
+	<div id="onmousedownup" class="event_demo"
+		onmousedown="document.getElementById('onmousedownup').textContent = 'onmousedown';"
+		onmouseup="document.getElementById('onmousedownup').textContent = 'onmouseup';"
+	>
+		onmouse <br>[down, up]
+	</div>
+
+	<script>
+		function eventhandler_onclick() {
+			var element = document.getElementById('onclick');
+			if (element.textContent == 'onclick') {
+				element.textContent = 'ONCLICK';
+			} else {
+				element.textContent = 'onclick';
+			}
+		}
+	</script>
+	<div id="onclick" class="event_demo"
+		onclick="eventhandler_onclick();"
+	>onclick</div>

@@ -1,0 +1,139 @@
+<script>
+	function removeOnClickListenerForCurrentContent() {
+		var url = new URL(window.location);
+		var content = url.searchParams.get("content");
+				
+		var node = document.getElementById(content);
+		node.removeAttribute("onclick");
+		node.classList.add("active");
+		node.style = "color: #ddd;";
+	}
+</script>
+
+<div class="container">
+            <div class="navbar-header">
+          		<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar"
+				>
+					<span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="comp.home.html" class="navbar-brand" href="" 
+					onclick="redirectToContent('comp.home.html');"
+				>
+					Digitale Medien
+				</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+            	<ul class="nav navbar-nav">
+                	<li class="dropdown">
+						<a id="comp.html.html"
+							href="" class="dropdown-toggle" 
+							data-toggle="dropdown" 
+							role="button" 
+							aria-haspopup="true" aria-expanded="false"
+							onclick="redirectToContent('comp.html.html')"
+						>
+							HTML 
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#html_head">Metainformationen</a></li>
+							<li><a href="#htmlentities">Sonderzeichen</a></li>
+							<li><a href="#links">Verweise</a></li>
+							<li><a href="#headlines">&Uuml;berschriften</a></li>
+							<li><a href="#markups">Hervorhebungen</a></li>
+							<li><a href="#paragraph">Abs&auml;tze</a></li>
+							<li><a href="#blockquote">Block-Zitate</a></li>
+							<li><a href="#pre">Preformatted Text</a></li>
+							<li><a href="#code">Code</a></li>
+		                	<li><a href="#lists">Listen</a></li>
+							<li><a href="#tables">Tabellen</a></li>
+							<li><a href="#forms">Formulare</a></li>
+						</ul>
+                	</li><!-- /.dropdown -->
+
+					<li class="dropdown">
+						<a id="comp.css.html"
+							href="" 
+							class="dropdown-toggle" 
+							data-toggle="dropdown" role="button" 
+							aria-haspopup="true" aria-expanded="false"
+							onclick="redirectToContent('comp.css.html')"
+						>
+							CSS
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#boxmodel?file=comp.css.html">Boxmodell</a></li>
+							<li><a href="#selectors">Selektoren</a></li>
+							<li><a href="#units">Einheiten</a></li>
+							<li><a href="#textlayout">Textsatz</a></li>
+							<!--
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							-->
+						</ul>
+					</li> <!-- /.dropdown -->
+					<li class="dropdown">
+						<a id="comp.js.html"
+							href="#" 
+							class="dropdown-toggle" 
+							data-toggle="dropdown" role="button" 
+							aria-haspopup="true" aria-expanded="false"
+							onclick="redirectToContent('comp.js.html')"
+						>
+							Javascript
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#boxmodel?file=comp.css.html">Syntax</a></li>
+							<li><a href="#selectors">Selektoren</a></li>
+							<li><a href="#units">Einheiten</a></li>
+							<li><a href="#textlayout">Textsatz</a></li>
+							<!--
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							-->
+						</ul>
+					</li> <!-- /.dropdown -->
+					<li>
+						<a id="comp.advanced.html" 
+							href='javascript:redirectToContent("comp.advanced.html");'
+						>
+							js-Form-Elemente
+						</a>
+					</li>
+					<li>
+						<a id="comp.links.html" 
+							href="javascript:redirectToContent('comp.links.html')"
+						>
+							Verweise
+						</a>
+					</li>
+            	</ul>
+            </div><!--/.nav-collapse -->
+        </div>
+
+<script>
+	removeOnClickListenerForCurrentContent();
+</script>

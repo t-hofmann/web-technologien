@@ -1,0 +1,576 @@
+<div id="content" class="starter-template">
+	<a id="html">
+				<h1>HTML</h1>
+			</a>
+
+			<p>
+				Bei <abbr title="Hypertext Markup Language">HTML</abbr> handelt es sich um eine Auszeichnungssprache.
+				Teile eines Textes werden mit Hifle sogenannter <em>Tags</em> ausgezeichnet. Zwischen
+				Starttag <code class="html">&lt;TAGNAME&gt;</code> und Endtag <code class="html">&lt;/TAGNAME&gt;</code>
+				steht der auszuzeichnende Text. Das Starttag kann zus&auml;tzlich
+				Attribute <code class="html">&lt;TAG ATTRIBUT="WERT"&gt;</code> enthalten, - den meisten Attributen
+				muss ein Wert zugeordnet werden. Das <code class="html">class</code>-Attribut verweist auf eine oder mehrere dem aktuellen Tag
+				zugeordnete CSS-Klassen.
+			</p>
+
+			<p>HTML-Kommentare <code class="html">&lt;!-- Kommentar --&gt;</code> werden vom Browser nicht für die Darstellung herangezogen.</p>
+
+			<p>
+				Die verschiedenartigen Elemente eines Hypertextes, wie bspw. &Uuml;berschriften,
+				Absätze, Listen, Tabellen, usw., können mit Hilfe dieser Tags ausgezeichnet werden.
+				Im Folgenden wird ein einf&uuml;hrender &Uuml;berblick gegeben.
+			</p>
+
+			<p>Ein html5-konformes Grundgerüst, - die erste Zeile <code class="html">&lt;!DOCTYPE html&gt;</code> weist den Browser dabei auf html5 hin:</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;!-- Metainformationen --&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;!-- Darzustellender Inhalt --&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+			<p>
+				Im <code class="html">head</code> werden Metainformationen zum aktuellen Dokument untergebracht, w&auml;hrend im
+				<code class="html">body</code> der darzustellende Inhalt steht.
+			</p>
+
+			<a id="html_head">
+				<h2>Metainformationen im <code class="html">&lt;head&gt;</code></h2>
+			</a>
+			<p>
+				Der "head" einer html-Datei kann Metainformationen zum Dokument beinhalten. Diese Metainformationen können den Titel,
+				Autor, Beschreibung und Stichworte beinhalten, genauso wie die Angabe zur verwendeten Kodierung, einzubindenden Stylesheets
+				oder Scriptdateien. Diese Aufzählung erhebt keinen Anspruch auf Vollständigkeit. Es folgt eine Beispiel für Metainformationen im Head einer HTML-Datei:
+<pre class="html">
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+
+	&lt;title&gt;TITEL&lt;/title&gt;
+	&lt;meta name="author" content="AUTOR"&gt;
+	&lt;meta name="date" content="ZEITANGABE NACH ISO 8601"&gt;
+	&lt;meta name="description" content="BESCHREIBUNG"&gt;
+	&lt;meta name="keywords" content="LISTE, VON, STICHWORTEN"&gt;
+
+	&lt;meta name="robots" content="noindex,nofollow"&gt;
+
+	&lt;link rel="stylesheet type="text/css" href="STYLESHEET.css"&gt;
+
+	&lt;meta http-equiv="refresh" content="SECONDS; URL=http://TARGETURL"&gt;
+	&lt;meta http-equiv="expires" content="0"&gt;
+&lt;/head&gt;
+</pre>
+			</p>
+
+			<a id="htmlentities">
+				<h2>Sonderzeichen</h2>
+			</a>
+			<p>
+				HTML bietet verschiedene M&ouml;glichkeiten, Sonderzeichen darzustellen:
+			</p>
+			<table class="table table-striped table-bordered">
+				<tr>
+					<th>html</th>
+					<th>Anzeige</th>
+					<th>Beschreibung</th>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;amp;</code></td>
+					<td>&amp;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;lt;</code></td>
+					<td>&lt;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;gt;</code></td>
+					<td>&gt;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;nbsp;</code></td>
+					<td>kein&nbsp;Zeilenumbruch&nbsp;erlaubt</td>
+					<td>
+						Leerzeichen das keinen Zeilenumbruch erlaubt.
+						<br>
+						Zum Testen die Breite des Anzeigefensters anpassen.
+					</td>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;shy;</code></td>
+					<td>Donau&shy;dampf&shy;schiff&shy;fahrts&shy;gesellschaft</td>
+					<td>
+						An derartig markierten Stellen darf ein Wort bei Bedarf getrennt werden.
+						<br>
+						Zum Testen die Breite des Anzeigefensters anpassen.
+					</td>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;auml;</code></td>
+					<td>&auml;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;Auml;</code></td>
+					<td>&Auml;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;ouml;</code></td>
+					<td>&ouml;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;Ouml;</code></td>
+					<td>&Ouml;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;uuml;</code></td>
+					<td>&uuml;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;Uuml;</code></td>
+					<td>&Uuml;</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><code class="html">&amp;szlig;</code></td>
+					<td>&szlig;</td>
+					<td></td>
+				</tr>
+			</table>
+			<h3>Ligaturen</h3>
+			<p>
+				Eine Spezialität aus dem Schriftsatz sind sogenannte Ligaturen (mittellat. <em>ligatura</em> "Verbindung").
+				Dabei handelt es sich um spezielle Schnitte um benachbarte Buchstaben zu verbinden. Durch den Einsatz von Ligaturen
+				soll ein harmonisches Schriftbild und eine gute Lesbarkeit erreicht werden.
+				An dieser Stelle kann nicht
+				vertiefend auf dieses Thema eingegangen werden, deshalb sei auf den
+				<a href="https://de.wikipedia.org/wiki/Ligatur_(Typografie)">Wikipedia-Artikel: "Ligatur (Typografie)"</a>
+				verwiesen.
+			</p>
+			<p>
+				Durch den Einsatz von <code class="html">&amp;zwj;</code> ("<em>zero width joiner</em>")
+				bzw. <code class="html">&amp;zwnj;</code> ("<em>zero width non joiner</em>")
+				kann eine Ligatur erlaubt bzw. verhindert werden. Das folgende Beispiel setzt voraus, dass
+				die Schriftart "Palatino Linotype" installiert ist. Für eigene Experimente k&ouml;nnte die
+				Suche innerhalb der Gruppe der sogenannten "gebrochenen" Schriften hilfreich sein.
+			</p>
+			<style>
+				div.ligatur {
+					font-family: "Palatino Linotype", gothic;
+					font-size: 400%;
+					font-variant-ligatures: common-ligatures;
+					-moz-font-feature-settings: "liga", "clig";
+					-webkit-font-feature-settings: "liga", "clig";
+					font-feature-settings: "liga", "clig";
+				}
+			</style>
+			<div class="well ligatur">
+				tt t&zwj;t t&zwnj;t
+				<br>
+				ff f&zwj;f f&zwnj;f
+				<br>
+				fi f&zwj;i f&zwnj;i
+			</div>
+
+			<a id="links">
+				<h2>Verweise</h2>
+			</a>
+			<p>
+				Wesentlich f&uuml;r HTML sind Verbindungen (engl. <em>link</em>). Ein Link-Ziel kann eine beliebige
+				<abbr title="in der Regel">i. d. R.</abbr> &uuml;ber <abbr title="hypertext transfer protocol">http</abbr>
+				erreichbare Resource sein, - https im Falle der verschl&uuml;sselten Variante.
+				Das <strong><a href="https://www.ietf.org/rfc/rfc2616.txt">Hypertext Transfer Protocol -- HTTP/1.1</a></strong>
+				(Roy Fielding, et al.; RFC 2616; IETF; 1999) ist im RFC 2616 definiert. Vertiefende Einblicke liefert in diesem Kontext die Dissertation
+				des Hauptautors
+				<a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf">
+					"Architectural Styles and the Design of Network-based Software Architectures"
+				(Diss.; Roy Thomas Fielding; 2000)</a>.
+			</p>
+
+			Es gibt verschiedene Typen von Links.
+			<dl>
+				<dt>absolut</dt>
+				<dd>
+					<a href="http://www.hs-anhalt.de/index.html">HS-Anhalt</a>
+						<code class="html">&lt;a href="http://www.hs-anhalt.de/index.html"&gt;HS-Anhalt&lt;/a&gt;</code>
+					<br>
+					<a href="/project/content/index.html">lokales Projekt</a>
+						<code class="html">&lt;a href="/project/content/index.html"&gt;lokales Projekt;/a&gt;</code>
+				</dd>
+				<dt>relativ</dt>
+				<dd><a href="../../hello_world.txt">hello world</a> <code class="html">&lt;a href="./hello_world.txt"&gt;&lt;/a&gt;</code></dd>
+			</dl>
+			<p>
+				Um etwaige Umz&uuml;ge der Webseiten zu erleichtern, sind relative Links in der Regel am zweckm&auml;&szlig;igsten.
+			</p>
+
+			<a id="headlines">
+				<h2>&Uuml;berschriften</h2>
+			</a>
+
+			<div class="well">
+				<h1>Headline 1<code class="html">&lt;h1&gt;</code></h1>
+				<h2>Headline 2<code class="html">&lt;h2&gt;</code></h2>
+				<h3>Headline 3<code class="html">&lt;h3&gt;</code></h3>
+				<h4>Headline 4<code class="html">&lt;h4&gt;</code></h4>
+				<h5>Headline 5<code class="html">&lt;h5&gt;</code></h5>
+				<h6>Headline 6<code class="html">&lt;h6&gt;</code></h6>
+			</div>
+
+			<a id="markups">
+				<h2>Hervorhebungen</h2>
+			</a>
+			<p>
+				Um Teile des Textes hervorzuheben wird f&uuml;r <strong>starke</strong> (engl. <em>strong</em>) Hervorhebungen
+				<code class="html">&lt;strong&gt;</code> genutzt, f&uuml;r <em>schw&auml;chere</em> <code class="html">&lt;em&gt;</code> (von (von <abbr title="englisch">engl.</abbr> <em>emphasize</em>).
+				Abk&uuml;rzungen k&ouml;nnen mit <code class="html">&lt;abbr&gt;</code> (von <abbr title="englisch">engl.</abbr> <em>abbreviation</em>)
+				ausgezeichnet werden.
+			</p>
+
+			<a id="paragraph"><h2>Abs&auml;tze</h2></a>
+			<p>
+				Der Tag <code class="html">&lt;p&gt;</code> (von <abbr title="englisch">engl.</abbr> <em>paragraph</em>) kennzeichnet Abs&auml;tze.
+				Die folgenden typographischen Satzarten sind nicht auf <code class="html">&lt;p&gt;</code>-Tags beschränkt,
+				werden aber häufig dort eingesetzt.
+			</p>
+
+			<a id="blockquote">
+				<h2>Blockquote</h2>
+			</a>
+			<p>
+				<code class="html">&lt;blockquote&gt;</code> dient dazu ein größeres Zitat aufzunehmen.
+			</p>
+
+			<div class="well">
+				<blockquote><caption><h3>"Herbstbild" von Friedrich Hebbel</h3></caption>
+					<p>	Dies ist ein Herbsttag, wie ich keinen sah.<br>
+						Die Luft ist still, als atmete man kaum,<br>
+						und dennoch fallen raschelnd fern und nah, <br>
+						die sch&ouml;nsten Fr&uuml;chte ab von jedem Baum.
+					</p>
+
+					<p>	O st&ouml;rt sie nicht, die Feier der Natur,<br>
+						dies ist die Lese, die sie selber h&auml;lt,<br>
+						denn heute l&ouml;st sich von den Zweigen nur,<br>
+						was von dem milden Strahl der Sonne f&auml;llt.
+					</p>
+				</blockquote>
+			</div>
+
+			<a id="pre">
+				<h2>Preformatted Text</h2>
+			</a>
+			<p>
+				Weißraum (engl. <em>whitespace</em>) innerhalb des <code class="html">&lt;code&gt;</code>-Tags wird wie im Quelltext stehend ausgegeben.
+			</p>
+			<pre>
+				Dieser Text
+				wird eins zu eins
+					ausgegeben.
+					oder?     -     Tatsache.
+			</pre>
+
+			<a id="code">
+				<h2>Code</h2>
+			</a>
+			<p>Der Inline-Tag <code class="html">&lt;code&gt;</code> kennzeichnet Quelltext.</p>
+
+			<p>Für längere Code-Stücke eignen sich <code class="html">&lt;pre&gt;</code>:</p>
+<pre class="shell">#!/usr/bin/env perl
+while (&lt;&gt;) {
+	print;
+}</pre>
+
+			<div class="well">
+				<caption>Randnotiz</caption>
+				<h3>Top 10 Worte einer HTML-Datei</h3>
+				<code class="shell">$&gt; perl -np -e 's/<.*?>//g; s/^\s*//; s/\s+/\n/;' | sort | uniq -c | sort -nr | head</code>
+				<h4>Beschreibung</h4>
+				<p>Das Problem wurde mit Hilfe einer Verkettung von Filtern gelöst.</p>
+
+				<ol>
+					<li>Der erste Filter "perl" arbeitet zeilenweise und besteht aus drei Unterfiltern:
+						<ol>
+							<li>Entfernen aller Tags (<code class="html">&lt;.*?&gt;</code>)</li>
+							<li>jeder "whitespace" (" ", \t, \n) am Anfang einer Zeile wird entfernt (<code class="html">^\s*</code>)</li>
+							<li>ein oder mehrere "whitespace" werden zu einem Zeilenumbruch (<code class="html">\s+/\n</code>)
+							</li>
+						</ol>
+						Ausgabe: Ein Wort pro Zeile
+					</li>
+					<li>Sortieren (<code class="html">sort</code>)</li>
+					<li>
+						Identische aufeinanderfolgende Zeilen werden zusammengefasst
+						und mit deren vorangestellter Anzahl ausgegeben (<code class="html">uniq -c</code>).
+					</li>
+					<li>Numerisches Sortieren in absteigender Reihenfolge (<code class="html">sort -nr</code>)</li>
+					<li>Ausgabe der ersten zehn Zeilen (<code class="html">head</code>)</li>
+				</ol>
+
+				<h4>Diskussion</h4>
+				<p>
+					Alternativ zum "perl"-Filter hätten auch mehrere "sed" verwendet werden können.
+				</p>
+				<p>
+					Der Ansatz HTML-Tags auszufiltern ist vergleichsweise naiv, bspw. funktioniert er nicht bei
+					auf mehrere Zeilen verteilten oder auskommentierten Tags. Ein in dieser Hinsicht robusterer,
+					wenn auch langsamerer, Ansatz wäre der Einsatz eines Parsers.
+				</p>
+			</div>
+
+			<a id="lists">
+				<h1>Lists</h1>
+			</a>
+			<p>
+				Es gibt drei Arten von Listen, ungeordnete (engl. <em>unordered</em>) <code class="html">&lt;ul&gt;</code>,
+				geordneted (engl. <em>ordered</em>) <code class="html">&lt;ol&gt;</code> und Definitions-Listen <code class="html">&lt;dl&gt;</code>.
+				Definitions-Listen beinhalten zu definierende Begriffe (engl. <em>definition term</em>) <code class="html">&lt;dt&gt;</code> und
+				deren jeweilige Definition <code class="html">&lt;dd&gt;</code>. Die anderen Listen beinhalten
+				Listenpunkte (engl. <em>list item</em>) <code class="html">&lt;li&gt;</code>.
+			</p>
+			<h2>Unordered List <code class="html">&lt;ul&gt;</code></h2>
+			<ul>
+				<li>rot <code class="html">&lt;li&gt;</code></li>
+				<li>orange</li>
+				<li>gelb</li>
+				<li>gr&uuml;n</li>
+				<li>blau</li>
+				<ul>
+					<li>hellblau</li>
+					<li>dunkelblau</li>
+				</ul>
+				<li>violett</li>
+			</ul>
+
+			<h2>Ordered List <code class="html">&lt;ol&gt;</code></h2>
+			<ol>
+				<li>rot <code class="html">&lt;li&gt;</code></li>
+				<li>orange</li>
+				<li>gelb</li>
+				<li>gr&uuml;n</li>
+				<li>blau
+					<ol>
+						<li>hellblau</li>
+						<li>dunkelblau</li>
+					</ol>
+				</li>
+				<li>violett</li>
+			</ol>
+
+			<h2>Definition List <code class="html">&lt;dl&gt;</code></h2>
+			<dl>
+				<dt><em>definition term</em> <code class="html">&lt;dt&gt;</code></dt>
+				<dd><em>definition</em> <code class="html">&lt;dd&gt;</code></dd>
+				<dt>Staat</dt>
+				<dd>Deutschland</dd>
+				<dt>Hauptstadt</dt>
+				<dd>Berlin</dd>
+			</dl>
+
+			<a id="tables">
+				<h1>Tabellen <code class="html">&lt;table&gt;</code></h1>
+			</a>
+			<p>
+				Tabellen <code class="html">&lt;table&gt;</code> bestehen aus Tabellen-Reihen (engl. <em>table row</em>) <code class="html">&lt;tr&gt;</code>
+				und diese aus Tabellen-Feldern (engl. <em>table data</em>) <code class="html">&lt;td&gt;</code>.
+			</p>
+			<p>
+				Tabellen-Felder k&ouml;nnen sich &uuml;ber mehrere Felder erstrecken, um dies zu
+				erreichen werden die Attributs <code class="html">colspan</code> f&uuml;r horizontal und
+				<code class="html">rowspan</code> f&uuml;r vertikale Zusammenfassung angegeben.
+			</p>
+			<table id="colored_table" border="1">
+				<tbody>
+					<tr>
+						<td style="background-color: red">1</td>
+						<td rowspan="2" style="background-color: lightblue">1x2</td>
+						<td style="background-color: grey">1</td>
+					</tr>
+					<tr>
+						<td style="background-color: orange">1</td>
+						<td style="background-color: yellow">1</td>
+					</tr>
+					<tr>
+						<td style="background-color: yellow">1</td>
+						<td colspan="2" rowspan="2" style="background-color: red; text-align: center;">2x2</td>
+					</tr>
+					<tr>
+						<td style="background-color: green">1</td>
+					</tr>
+					<tr>
+						<td colspan="3" style="background-color: lightblue; text-align: center;">3x1</code></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<a id="forms">
+				<h1>Formulare <code class="html">&lt;form&gt;</code></h1>
+			</a>
+			<p>
+				Formulare <code class="html">&lt;form&gt;</code> bestehen aus verschiedenen Eingabeelementen,
+				diese k&ouml;nnen gruppiert werden <code class="html">&lt;fieldset&gt;</code>. Eine solche Gruppe
+				kann eine Bezeichnung <code class="html">&lt;label&gt;</code> tragen.
+			</p>
+			<form action=""> <!-- table -->
+				<fieldset> <!-- table-row-group -->
+					<legend>Nutzer</legend>
+
+					<div> <!-- table-row -->
+						<label for="input_text">Label <code class="html">&lt;label&gt;</code></label><!-- table-cell -->
+						<input id="input_text" type="text" size="20" onchange="increaseProgress(event)" value="&lt;input type=&quot;text&quot;&gt;"><!-- table-cell -->
+					</div>
+
+					<div>
+						<label for="surname">Vorname</label><!-- table-cell -->
+						<input id="surname" type="text" size="10" onchange="increaseProgress(event)"><!-- table-cell -->
+					</div>
+
+					<div>
+						<label for="lastname">Nachname</label>
+						<input id="lastname" type="text" size="10" onchange="increaseProgress(event)">
+					</div>
+
+					<div>
+						<label for="email">E-Mail</label>
+						<input id="email" type="text" size="20" onchange="increaseProgress(event)">
+					</div>
+
+					<div>
+						<label for="password">Passwort</label>
+						<input id="password" type="password" size="16" onchange="increaseProgress(event)">
+					</div>
+
+					<div>
+						<label for="gender">Geschlecht</label>
+
+						<div onchange="increaseProgress(event)">
+							<label for="gender_m"><input id="gender_m" name="gender" type="radio">m</label>
+							<label for="gender_f"><input id="gender_f" name="gender" type="radio">f</label>
+						</div>
+					</div>
+
+					<div>
+						<label for="interests">Interessen</label>
+
+						<div onchange="increaseProgress(event)">
+							<label for="interest_A"><input id="interest_A" name="interest" type="checkbox">A</label>
+							<label for="interest_B"><input id="interest_B" name="interest" type="checkbox">B</label>
+							<label for="interest_C"><input id="interest_C" name="interest" type="checkbox">C</label>
+							<label for="interest_D"><input id="interest_D" name="interest" type="checkbox">D</label>
+							<label for="interest_E"><input id="interest_E" name="interest" type="checkbox">E</label>
+							<br>
+							<label for="interest_F"><input id="interest_F" name="interest" type="checkbox">F</label>
+							<label for="interest_G"><input id="interest_G" name="interest" type="checkbox">G</label>
+							<label for="interest_H"><input id="interest_H" name="interest" type="checkbox">H</label>
+							<label for="interest_I"><input id="interest_I" name="interest" type="checkbox">I</label>
+							<label for="interest_J"><input id="interest_J" name="interest" type="checkbox">J</label>
+						</div>
+					</div>
+
+					<div>
+						<label for="comment">Kommentar</label>
+						<textarea name="comment" id="comment" cols="30" rows="5"></textarea>
+					</div>
+
+				</fieldset> <!-- /table-row-group -->
+
+				<fieldset>
+					<legend>Auswahlboxen</legend>
+					<div>
+						<label for="music_style">Musikrichtungen</label>
+						<select name="music_style" id="music_style" size="5" multiple onchange="increaseProgress(event)">
+							<option value="">Alternative</option>
+							<option value="">Jazz</option>
+							<option value="">Klassik</option>
+							<option value="">Hard Rock</option>
+							<option value="">Metal</option>
+							<option value="">Pop</option>
+						</select>
+					</div>
+					<div>
+						<label for="Bundesland">Bundesland</label>
+						<select name="" id="Bundesland" onchange="increaseProgress(event)">
+							<option value="">Baden-W&uuml;rttemberg</option>
+							<option value="">Bayern</option>
+							<option value="">Berlin</option>
+							<option value="">Brandenburg</option>
+							<option value="">Bremen</option>
+							<option value="">Hamburg</option>
+							<option value="">Hessen</option>
+							<option value="">Mecklenburg-Vorpommern</option>
+							<option value="">Niedersachsen</option>
+							<option value="">Nordrhein-Westfalen</option>
+							<option value="">Rheinland-Pfalz</option>
+							<option value="">Saarland</option>
+							<option value="">Sachsen</option>
+							<option value="">Sachsen-Anhalt</option>
+							<option value="">Schleswig-Holstein</option>
+							<option value="">Th&uuml;ringen</option>
+						</select>
+					</div>
+				</fieldset>
+
+
+				<fieldset>
+					<legend>Progressbar</legend>
+					<div>
+						<label for="progress">Fortschritt</label>
+						<progress id="progress" value="0" max="8"></progress>
+					</div>
+				</fieldset>
+
+				<fieldset> <!-- last-of-type => table-row -->
+					<div>
+						<button type="reset" class="btn btn-primary">Reset</button>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</fieldset>
+			</form>
+
+			<style>
+				form.mixer {
+					width: 25em;
+					padding: 1em;
+					border: 1px solid gainsboro;
+					text-align: left;
+				}
+
+				form.mixer output {
+					position: relative;
+					text-align: right;
+					width: 3.5em;
+					height: 3em;
+					color: white;
+					background-image: linear-gradient(160deg, white, lightgrey 10%, grey);
+					border-radius: 1em;
+					padding: 0.75em 0.5em 1em;
+					/*display: inline-block;
+					margin-left: -1%;*/
+				}
+
+				form.mixer output:after {
+					content: "%";
+				}
+			</style>
+
+			<div class="well">
+				<form class="mixer" oninput="v=parseInt(fader.value); x.value=v; meter.value=v;">
+					<caption for"fader">Slider</caption>
+					<input type="range" id="fader" value="50">
+					<output name="x" for="fader">50</output>
+					<br>
+					<caption for="meter">Meter</caption>
+					<meter style="display: block; margin-top: 0.5em; vertical-align: bottom; width: 100%; /*transform: rotate(-90deg) translate(2em, -1em);*/"
+						id="meter" min="0" max="100" optimum="50" low="66" high="90"
+					></meter>
+
+				</form>
+			</div>
+</div>

@@ -1,9 +1,9 @@
 function iterate(hash) {
     document.writeln('<table>');
-    
+
         document.writeln('<tr><th>key</th><th>=&gt;</th><th>value</th></tr>');
 
-        for(var key in hash) { // iteriert ueber alle keys des Hashs
+        for(var key in hash) { // iteriert über alle keys des Hashs
             document.writeln('<tr>');
                 document.writeln('<td>' + key + '</td>'); // aktueller "key"
                 document.writeln('<td> =&gt; </td>');

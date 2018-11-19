@@ -282,7 +282,7 @@
 			</a>
 			<p>Der Inline-Tag <code class="html">&lt;code&gt;</code> kennzeichnet Quelltext.</p>
 
-			<p>Für längere Code-Stücke eignen sich <code class="html">&lt;pre&gt;</code>:</p>
+			<p>Für längere Code-Stücke eignen sich <code class="html">&lt;pre&gt;</code>-Tags:</p>
 <pre class="shell">#!/usr/bin/env perl
 while (&lt;&gt;) {
 	print;
@@ -378,15 +378,49 @@ while (&lt;&gt;) {
 				<h1>Tabellen <code class="html">&lt;table&gt;</code></h1>
 			</a>
 			<p>
-				Tabellen <code class="html">&lt;table&gt;</code> bestehen aus Tabellen-Reihen (engl. <em>table row</em>) <code class="html">&lt;tr&gt;</code>
-				und diese aus Tabellen-Feldern (engl. <em>table data</em>) <code class="html">&lt;td&gt;</code>.
+				Tabellen <code class="html">&lt;table&gt;</code> beinhalten Tabellen-Reihen (engl. <em>table row</em>) <code class="html">&lt;tr&gt;</code>
+				und diese Tabellen-Felder (engl. <em>table data</em>) <code class="html">&lt;td&gt;</code>.
 			</p>
 			<p>
 				Tabellen-Felder k&ouml;nnen sich &uuml;ber mehrere Felder erstrecken, um dies zu
-				erreichen werden die Attributs <code class="html">colspan</code> f&uuml;r horizontal und
+				erreichen werden die Attribute <code class="html">colspan</code> f&uuml;r horizontal und
 				<code class="html">rowspan</code> f&uuml;r vertikale Zusammenfassung angegeben.
 			</p>
+
+			<caption>Code für eine Tabelle mit zwei Zeilen und zwei Spalten, die Tabelle nutzt in "Bootstrap" definierte CSS-Klassen.</caption>
+			<pre><code class="html">&lt;table class="table table-bordered"&gt;
+	&lt;tr&gt;
+		&lt;td&gt;
+			Feld 1/1
+		&lt;/td&gt;
+		&lt;td&gt;
+			Feld 1/2
+		&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td colspan="2"&gt;
+			Feld 2/1
+		&lt;/td&gt;
+		&lt;td&gt;
+			Feld 2/2
+		&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+			<table class="table table-bordered">
+				<caption>Darstellung zum vorangegangenen Code:</caption>
+				<tr>
+					<td>Feld 1/1</td>
+					<td>Feld 1/2</td>
+				</tr>
+				<tr>
+					<td>Feld 2/1</td>
+					<td>Feld 2/2</td>
+				</tr>
+			</table>
+
 			<table id="colored_table" border="1">
+				<caption><nobr>Ein weiteres Beispiel:</nobr></caption>
 				<tbody>
 					<tr>
 						<td style="background-color: red">1</td>

@@ -1,53 +1,29 @@
 <h1>Javascript</h1>
-
-	<h2>Datentypen/Datenstrukturen</h2>
-	<dl>
-		<dt>boolean</dt>
-		<dd>
-			<code class="js">var isGiven = true;</code>
-			<br>
-			<code class="js">var isGiven = false;</code>
-		</dd>
-
-		<dt>Zeichenketten</dt>
-		<dd><code class="js">var zeichenkette = "ein String";</code></dd>
-
-		<dt>Zahlen</dt>
-		<dd>
-			<dl>
-				<dt>Ganze Zahlen</dt>
-				<dd><code class="js">var number = 42;</code></dd>
-
-				<dt>Dezimalzahlen</dt>
-				<dd><code class="js">var euler = 2.718281828459054</code></dd>
-
-				<dt>Hexadezimalzahlen</dt>
-				<dd>0x2A</dd>
-
-				<dt>Oktalzahlen</dt>
-				<dd>052</dd>
-			</dl>
-		</dd>
-
-		<dt>Array</dt>
-		<dd>
-<pre class="js">var myArray = [2, "a", "hallo welt"];
-	var elem1 = myArray[0];
-	// ...
-	var elem3 = myArray[2];
+	<h2>Einbinden von Javascript</h2>
+	<p>
+		Javascript kann direkt in einer HTML-Datei innerhalb von <code class="js">script</code>-Tags geschrieben werden,
+		oder durch einen Verweis auf eine externe Datei eingebunden werden, etwa:
+	</p>
+		<pre><code class="js">
+&lt;script src="js/externe_datei.js"&gt;&lt;/script&gt;
+&lt;script src="js/externe_datei.js" async&gt;&lt;/script&gt;</code>
 </pre>
-		</dd>
 
-		<dt>Assoziatives Array</dt>
-		<dd></dd>
+	<p>
+		Sofern die Ausführung des Skriptes asynchron erfolgen kann, sollte es mit dem
+		HTML-Attribut "<code class="html">async</code>" als asynchron ladbare Datei gekennzeichnet werden.
+		So kann der Browser mit dem Laden und Darstellen der HTML-Seite fortfahren, während die externe Javascript-Datei
+		heruntergeladen wird. Andernfalls müsste der Browser warten, bis die externe Javascript-Datei verfügbar ist.
+	</p>
 
-		<dt>Objekt</dt>
-		<dd></dd>
-	</dl>
+<!-- ****************************************************** -->
 
-	<h2>Operatoren</h2>
-
-	<h2>Syntax</h2>
+<h2>Syntax</h2>
+	<h3>Statements</h3>
+	<p>
+		In Javascript werden Statements mit einem Semikolon (";") beendet.
+		Mehrere Statements können mit geschweiften Klammern ("{}") zu einem Statement zusammengefasst werden.
+	</p>
 		<h3>Kommentare</h3>
 		<p>Es ist möglich mehrzeilige oder einzeilige Kommentare zu schreiben</p>
 <pre class="js">/*
@@ -130,7 +106,83 @@ for (var KEY in HASH) { // iteriert auch über Eigenschaften eines Objekts
 }
 </pre>
 
-<h3>Event-Handling</h3>
+<!-- ****************************************************** -->
+
+<h2>Datentypen/Datenstrukturen</h2>
+	<dl>
+		<dt>boolean</dt>
+		<dd>
+			<code class="js">var isGiven = true;</code>
+			<br>
+			<code class="js">var isGiven = false;</code>
+		</dd>
+
+		<dt>Zeichenketten</dt>
+		<dd><code class="js">var zeichenkette = "ein String";</code></dd>
+
+		<dt>Zahlen</dt>
+		<dd>
+			<dl>
+				<dt>Ganze Zahlen</dt>
+				<dd><code class="js">var number = 42;</code></dd>
+
+				<dt>Dezimalzahlen</dt>
+				<dd><code class="js">var euler = 2.718281828459054</code></dd>
+
+				<dt>Hexadezimalzahlen</dt>
+				<dd>0x2A</dd>
+
+				<dt>Oktalzahlen</dt>
+				<dd>052</dd>
+			</dl>
+		</dd>
+
+		<dt>Array</dt>
+		<dd>
+<pre class="js">var myArray = [2, "a", "hallo welt"];
+	var elem1 = myArray[0];
+	// ...
+	var elem3 = myArray[2];
+</pre>
+		</dd>
+
+		<dt>Assoziatives Array</dt>
+		<dd></dd>
+
+		<dt>Objekt</dt>
+		<dd></dd>
+	</dl>
+
+	<h2>Operatoren</h2>
+
+
+<!-- ****************************************************** -->
+
+<h2>Auswahl von HTML-Elementen</h2>
+	<p>
+		Um Elemente einer HTML-Seite auswählen zu können existieren verschiedene Methoden, darunter:
+	</p>
+
+	<table>
+		<tr><td>document.getElementById(id)</td><td>Gibt das Element mit der "id" zurück.</td></tr>
+		<tr><td>document.getElementsByTagName(tagname)</td><td>Gibt ein Array von Elementen mit dem angegebenen Tag zurück.</td></tr>
+		<tr><td>document.getElementsByClassName(classname)</td><td>Gibt ein Array von Elementen mit der angegebenen CSS-Klasse zurück.</td></tr>
+		<!--
+		<tr><td></td><td></td></tr>
+		<tr><td></td><td></td></tr>
+		<tr><td></td><td></td></tr>
+		<tr><td></td><td></td></tr>
+		-->
+	</table>
+
+	<script type="text/javascript">
+		document.get
+	</script>
+
+
+<!-- ****************************************************** -->
+
+<h2>Event-Handling</h2>
 	<p>Events haben einen Ursprung und einen Typ.</p>
 	<p>Ein Event-Handler bearbeitet ein Event.</p>
 	<p>Ein Event-Listener stellt die Verbindung zwischen Event und Event-Handler her.</p>
@@ -151,8 +203,8 @@ for (var KEY in HASH) { // iteriert auch über Eigenschaften eines Objekts
 		div.event_demo:hover {
 			background-color: lightgrey;
 		}
-
 	</style>
+
 	<div id="onmouseover" class = "event_demo"
 		onmouseover="document.getElementById('onmouseover').textContent = 'onmouseover';"
 		onmouseout="document.getElementById('onmouseover').textContent = 'onmouseout';"
@@ -180,3 +232,4 @@ for (var KEY in HASH) { // iteriert auch über Eigenschaften eines Objekts
 	<div id="onclick" class="event_demo"
 		onclick="eventhandler_onclick();"
 	>onclick</div>
+

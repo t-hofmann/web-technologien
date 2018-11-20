@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  httpd:
+    image: php:apache
+
+    volumes:
+      - "./webroot:/var/www/html:rw"
+
+    ports:
+      - "80:80"
